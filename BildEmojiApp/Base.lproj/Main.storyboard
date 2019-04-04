@@ -48,21 +48,26 @@
                                         </constraints>
                                     </stackView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="caL-C7-5bu">
-                                        <rect key="frame" x="0.0" y="80" width="375" height="0.0"/>
+                                        <rect key="frame" x="8" y="80" width="359" height="0.0"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" id="pgR-cL-8uk"/>
                                         </constraints>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="T3t-Z1-364">
-                                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                                <rect key="frame" x="0.0" y="28" width="359" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="T3t-Z1-364" id="zbe-Vb-lmQ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="359" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                             </tableViewCell>
                                         </prototypes>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="rect" keyPath="contentInset">
+                                                <rect key="value" x="0.0" y="-10" width="0.0" height="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </tableView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hdT-RB-1Mb">
                                         <rect key="frame" x="70" y="110" width="235" height="50"/>
@@ -77,24 +82,24 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="BpM-4c-lhf" firstAttribute="centerX" secondItem="caL-C7-5bu" secondAttribute="centerX" id="0Rt-CK-qWp"/>
-                                    <constraint firstItem="caL-C7-5bu" firstAttribute="leading" secondItem="FKb-E8-fHQ" secondAttribute="leading" id="3sQ-hM-gWE"/>
                                     <constraint firstAttribute="bottom" secondItem="hdT-RB-1Mb" secondAttribute="bottom" constant="30" id="9Dg-MF-6QC"/>
                                     <constraint firstItem="BpM-4c-lhf" firstAttribute="centerX" secondItem="FKb-E8-fHQ" secondAttribute="centerX" id="M5C-tk-gqg"/>
-                                    <constraint firstAttribute="trailing" secondItem="caL-C7-5bu" secondAttribute="trailing" id="Omj-Yn-yX9"/>
+                                    <constraint firstItem="caL-C7-5bu" firstAttribute="leading" secondItem="FKb-E8-fHQ" secondAttribute="leadingMargin" id="Ry2-iW-quy"/>
                                     <constraint firstItem="hdT-RB-1Mb" firstAttribute="leading" secondItem="FKb-E8-fHQ" secondAttribute="leading" constant="70" id="Wzn-CW-B2f"/>
                                     <constraint firstAttribute="trailing" secondItem="hdT-RB-1Mb" secondAttribute="trailing" constant="70" id="ef2-hh-HZR"/>
                                     <constraint firstItem="hdT-RB-1Mb" firstAttribute="top" secondItem="caL-C7-5bu" secondAttribute="bottom" constant="30" id="lad-jy-FVK"/>
                                     <constraint firstItem="caL-C7-5bu" firstAttribute="top" secondItem="BpM-4c-lhf" secondAttribute="bottom" constant="30" id="tQQ-jR-YUc"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="caL-C7-5bu" secondAttribute="trailing" id="vdL-XC-DYj"/>
                                     <constraint firstItem="BpM-4c-lhf" firstAttribute="top" secondItem="FKb-E8-fHQ" secondAttribute="top" constant="20" id="wFn-BA-8CS"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="FKb-E8-fHQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="HW7-9r-ft8"/>
-                            <constraint firstItem="FKb-E8-fHQ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="gSi-bL-Lzl"/>
-                            <constraint firstItem="FKb-E8-fHQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="j2J-fD-NXr"/>
-                            <constraint firstItem="FKb-E8-fHQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="mIc-tI-ynE"/>
+                            <constraint firstItem="FKb-E8-fHQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IQv-n7-Eic"/>
+                            <constraint firstItem="FKb-E8-fHQ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="JsE-Fk-3mK"/>
+                            <constraint firstItem="FKb-E8-fHQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fIW-7A-aAO"/>
+                            <constraint firstItem="FKb-E8-fHQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="zGz-iC-MYM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

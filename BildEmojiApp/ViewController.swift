@@ -134,6 +134,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.textLabel?.textAlignment = .center
+        cell.textLabel?.adjustsFontSizeToFitWidth = true
+        
         switch state {
         case "photos":
             cell.textLabel?.text = "\(images[indexPath.row].location),  \(DateTimeFormatter().formatDate(date: images[indexPath.row].date))"
