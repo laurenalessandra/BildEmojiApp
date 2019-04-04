@@ -12,6 +12,10 @@
 		4D35B401225528C7005916E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D35B3FF225528C7005916E0 /* Main.storyboard */; };
 		4D35B403225528CF005916E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D35B402225528CF005916E0 /* Assets.xcassets */; };
 		4D35B406225528CF005916E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D35B404225528CF005916E0 /* LaunchScreen.storyboard */; };
+		4D35B40E2255296D005916E0 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D35B40D2255296D005916E0 /* Photo.swift */; };
+		4D35B41022552F0E005916E0 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D35B40F22552F0E005916E0 /* Alert.swift */; };
+		4D35B41222554CE0005916E0 /* GeoDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D35B41122554CE0005916E0 /* GeoDecoder.swift */; };
+		4D35B4142255A2C9005916E0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D35B4132255A2C9005916E0 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		4D35B402225528CF005916E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D35B405225528CF005916E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D35B407225528CF005916E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D35B40D2255296D005916E0 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		4D35B40F22552F0E005916E0 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		4D35B41122554CE0005916E0 /* GeoDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoDecoder.swift; sourceTree = "<group>"; };
+		4D35B4132255A2C9005916E0 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,10 @@
 			children = (
 				4D35B3FB225528C7005916E0 /* AppDelegate.swift */,
 				4D35B3FD225528C7005916E0 /* ViewController.swift */,
+				4D35B4132255A2C9005916E0 /* DetailViewController.swift */,
+				4D35B40D2255296D005916E0 /* Photo.swift */,
+				4D35B40F22552F0E005916E0 /* Alert.swift */,
+				4D35B41122554CE0005916E0 /* GeoDecoder.swift */,
 				4D35B3FF225528C7005916E0 /* Main.storyboard */,
 				4D35B402225528CF005916E0 /* Assets.xcassets */,
 				4D35B404225528CF005916E0 /* LaunchScreen.storyboard */,
@@ -135,7 +147,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D35B41222554CE0005916E0 /* GeoDecoder.swift in Sources */,
+				4D35B40E2255296D005916E0 /* Photo.swift in Sources */,
 				4D35B3FE225528C7005916E0 /* ViewController.swift in Sources */,
+				4D35B4142255A2C9005916E0 /* DetailViewController.swift in Sources */,
+				4D35B41022552F0E005916E0 /* Alert.swift in Sources */,
 				4D35B3FC225528C7005916E0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
