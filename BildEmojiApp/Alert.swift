@@ -9,10 +9,6 @@
 import Foundation
 import UIKit
 
-/*protocol Alert {
-    func showAlert(title: String, message: String, action: String, view: ViewController)
-}*/
-
 class BasicAlert {
     func showAlert(title: String, message: String, action: String, view: ViewController) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)

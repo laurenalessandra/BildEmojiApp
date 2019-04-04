@@ -10,15 +10,17 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    
-    
-    //SHOULD THIS BE ? OR ! !!!!!!!
     var content: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        print(content)
+        let label = UILabel()
+        label.text = content
+        self.view.addSubview(label)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        label.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
 
 }

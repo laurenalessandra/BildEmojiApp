@@ -47,14 +47,14 @@
                                             <constraint firstAttribute="height" constant="30" id="wHM-Gt-k7S"/>
                                         </constraints>
                                     </stackView>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="caL-C7-5bu">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="caL-C7-5bu">
                                         <rect key="frame" x="0.0" y="80" width="375" height="0.0"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" id="pgR-cL-8uk"/>
                                         </constraints>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="T3t-Z1-364">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="T3t-Z1-364">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="T3t-Z1-364" id="zbe-Vb-lmQ">
@@ -76,13 +76,13 @@
                                     </textView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="caL-C7-5bu" firstAttribute="leading" secondItem="FKb-E8-fHQ" secondAttribute="leading" id="0KY-LL-giQ"/>
                                     <constraint firstItem="BpM-4c-lhf" firstAttribute="centerX" secondItem="caL-C7-5bu" secondAttribute="centerX" id="0Rt-CK-qWp"/>
+                                    <constraint firstItem="caL-C7-5bu" firstAttribute="leading" secondItem="FKb-E8-fHQ" secondAttribute="leading" id="3sQ-hM-gWE"/>
                                     <constraint firstAttribute="bottom" secondItem="hdT-RB-1Mb" secondAttribute="bottom" constant="30" id="9Dg-MF-6QC"/>
                                     <constraint firstItem="BpM-4c-lhf" firstAttribute="centerX" secondItem="FKb-E8-fHQ" secondAttribute="centerX" id="M5C-tk-gqg"/>
+                                    <constraint firstAttribute="trailing" secondItem="caL-C7-5bu" secondAttribute="trailing" id="Omj-Yn-yX9"/>
                                     <constraint firstItem="hdT-RB-1Mb" firstAttribute="leading" secondItem="FKb-E8-fHQ" secondAttribute="leading" constant="70" id="Wzn-CW-B2f"/>
                                     <constraint firstAttribute="trailing" secondItem="hdT-RB-1Mb" secondAttribute="trailing" constant="70" id="ef2-hh-HZR"/>
-                                    <constraint firstAttribute="trailing" secondItem="caL-C7-5bu" secondAttribute="trailing" id="iKd-h6-pib"/>
                                     <constraint firstItem="hdT-RB-1Mb" firstAttribute="top" secondItem="caL-C7-5bu" secondAttribute="bottom" constant="30" id="lad-jy-FVK"/>
                                     <constraint firstItem="caL-C7-5bu" firstAttribute="top" secondItem="BpM-4c-lhf" secondAttribute="bottom" constant="30" id="tQQ-jR-YUc"/>
                                     <constraint firstItem="BpM-4c-lhf" firstAttribute="top" secondItem="FKb-E8-fHQ" secondAttribute="top" constant="20" id="wFn-BA-8CS"/>

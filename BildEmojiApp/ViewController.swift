@@ -11,7 +11,6 @@ import Photos
 import CoreLocation
 
 class ViewController: UIViewController, UINavigationControllerDelegate {
-    
 
     @IBOutlet weak var tableHeight: NSLayoutConstraint!
     var imagePicker = UIImagePickerController()
@@ -29,19 +28,15 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         locationManager.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
-    
     }
     
     override func viewDidAppear(_ animated: Bool) {
         switch state {
         case "photos": tableHeight.constant = CGFloat(images.count*100)
         case "emojis": tableHeight.constant = CGFloat(emojis.count*50)
-        default: print("shouldn't be in here")
+        default: tableHeight.constant = 0
         }
-        tableView.reloadData()
     }
-    
-
     
     @IBAction func addImagePressed(_ sender: UIBarButtonItem) {
         switch state {
@@ -63,7 +58,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
                 }
             }
         default:
-            print("shouldn't be here")
+            self.tableHeight.constant = 0
+            self.tableView.reloadData()
         }
     }
     
@@ -81,14 +77,13 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         photoButton.setTitleColor(UIColor.lightGray, for: .normal)
         tableHeight.constant = CGFloat(emojis.count*50)
         tableView.reloadData()
-
     }
 }
 extension ViewController: UIImagePickerControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         let meta = info[UIImagePickerController.InfoKey.mediaMetadata] as? NSDictionary
-        var data = meta?.object(forKey: "{TIFF}") as? NSDictionary
+        let data = meta?.object(forKey: "{TIFF}") as? NSDictionary
 
         GeoDecoder().decode(location: currentLocation) { result in
             self.images.append(Photo(photo: image, location: result, date: data?.object(forKey: "DateTime") as! String))
@@ -98,6 +93,7 @@ extension ViewController: UIImagePickerControllerDelegate {
         locationManager.stopUpdatingLocation()
         dismiss(animated: true, completion: nil)
     }
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         locationManager.stopUpdatingLocation()
         dismiss(animated: true, completion: nil)
@@ -123,7 +119,7 @@ extension ViewController: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("Failed to get user location.")
+        print(error)
     }
 }
 
@@ -135,30 +131,29 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         default:        return 0
         }
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         switch state {
         case "photos":
-            cell.textLabel?.text = "\(images[indexPath.row].location)  \(images[indexPath.row].date)"
+            cell.textLabel?.text = "\(images[indexPath.row].location),  \(DateTimeFormatter().formatDate(date: images[indexPath.row].date))"
             cell.imageView?.image = images[indexPath.row].photo
         case "emojis":
             cell.textLabel?.text = emojis[indexPath.row]
             cell.imageView?.image = nil
-        default: print("didn't work!")
+        default:
+            cell.textLabel?.text = ""
+            cell.imageView?.image = nil
         }
-
         return cell
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch state {
         case "photos":  return 100
         case "emojis":  return 50
-        default:  return 50
+        default:  return 0
         }
-    }
-    
-    func tableView(_ tableView: UITableView, indentationLevelForRowAt indexPath: IndexPath) -> Int {
-        return 1
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -171,7 +166,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         self.navigationController?.pushViewController(vc, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
 }
 
 extension UITextField {
