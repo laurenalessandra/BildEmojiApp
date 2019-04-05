@@ -25,7 +25,6 @@ class GeoDecoder {
                     print("Error retrieving place.  Error code: \(error!)")
                     place = "Unknown Location"
                     completion(place)
-                    
                 }
         })
     }

@@ -11,13 +11,15 @@ import Foundation
 class DateTimeFormatter {
     
     func formatDate(date: String) -> String {
+        var formattedDate = ""
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy:MM:dd HH:mm:ss"
-        let newDate = dateFormatter.date(from: date)
-        
-        let stringFormatter = DateFormatter()
-        stringFormatter.dateFormat = "dd MMM, yyyy HH:mm"
-        return stringFormatter.string(from: newDate!)
+        if let newDate = dateFormatter.date(from: date) {
+            let stringFormatter = DateFormatter()
+            stringFormatter.dateFormat = "dd MMM, yyyy HH:mm"
+            formattedDate = stringFormatter.string(from: newDate)
+        }
+        return formattedDate
     }
     
 }

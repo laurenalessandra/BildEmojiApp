@@ -39,10 +39,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     }
     
     @IBAction func addImagePressed(_ sender: UIBarButtonItem) {
+        locationManager.startUpdatingLocation()
         switch state {
         case "photos":
             if UIImagePickerController.isSourceTypeAvailable(.camera) {
-                locationManager.startUpdatingLocation()
                 imagePicker.sourceType = .camera
                 imagePicker.delegate = self
                 present(imagePicker, animated: true, completion: nil)
@@ -58,8 +58,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
                 }
             }
         default:
-            self.tableHeight.constant = 0
-            self.tableView.reloadData()
+            print("Can't add emoji or image.")
         }
     }
     
@@ -84,7 +83,6 @@ extension ViewController: UIImagePickerControllerDelegate {
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         let meta = info[UIImagePickerController.InfoKey.mediaMetadata] as? NSDictionary
         let data = meta?.object(forKey: "{TIFF}") as? NSDictionary
-
         GeoDecoder().decode(location: currentLocation) { result in
             self.images.append(Photo(photo: image, location: result, date: data?.object(forKey: "DateTime") as! String))
             self.tableHeight.constant = CGFloat(self.images.count*100)
@@ -106,9 +104,9 @@ extension ViewController: CLLocationManagerDelegate {
         case .notDetermined:
             locationManager.requestWhenInUseAuthorization()
         case .authorizedAlways, .authorizedWhenInUse:
-            locationManager.requestLocation()
+            print("LocationManager authorized.")
         case .restricted, .denied:
-            BasicAlert().showAlert(title: "Location services denied", message: "It may be that parental controls are restricting location use in this app", action: "Okay", view: self)
+            BasicAlert().showAlert(title: "Location services denied", message: "To enable location services change in settings.", action: "Okay", view: self)
         }
     }
     
@@ -162,7 +160,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = DetailViewController()
         switch state {
-        case "photos":  vc.content = images[indexPath.row].date
+        case "photos":  vc.content = DateTimeFormatter().formatDate(date: images[indexPath.row].date)
         case "emojis":  vc.content = emojis[indexPath.row]
         default: vc.content = ""
         }

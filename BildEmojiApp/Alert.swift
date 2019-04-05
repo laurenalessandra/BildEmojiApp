@@ -15,7 +15,6 @@ class BasicAlert {
         alert.addAction(UIAlertAction(title: action, style: UIAlertAction.Style.default, handler: nil))
         view.present(alert, animated: true, completion: nil)
     }
-    
 }
 
 class TextFieldAlert {
@@ -24,11 +23,11 @@ class TextFieldAlert {
         alert.addAction(UIAlertAction(title: action, style: UIAlertAction.Style.default) { (_) in
             if let field = alert.textFields?.first?.text {
                 completion(field)
-                }
-            })
+            }
+        })
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) { _ in
             completion("")
-            })
+        })
         alert.addTextField { textField in
             textField.placeholder = "Enter here"
         }
