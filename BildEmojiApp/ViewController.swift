@@ -30,7 +30,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         tableView.dataSource = self
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         switch state {
         case "photos": tableHeight.constant = CGFloat(images.count*100)
         case "emojis": tableHeight.constant = CGFloat(emojis.count*50)
